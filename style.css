@@ -1,21 +1,19 @@
+/*
+ * This file contains custom CSS for the portfolio website.
+ * The majority of the styling is handled by Tailwind CSS utility classes
+ * directly in the HTML file. Use this file for any custom styles that
+ * cannot be achieved with Tailwind.
+ */
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
+  font-family: 'Inter', sans-serif;
 }
 
-header, section, footer {
-  padding: 20px;
-  margin: 10px;
-  background-color: white;
-  border-radius: 8px;
+/* Example of adding custom styles if needed */
+/*
+.my-custom-class {
+  color: #fff;
+  border: 1px solid #e94560;
+  padding: 10px;
 }
-
-h1, h2 {
-  color: #333;
-}
-
-ul {
-  list-style-type: square;
-}
+*/

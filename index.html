@@ -3,30 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>My Professional Portfolio</title>
+  <!-- Use a modern font like Inter from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Link to the separate CSS file -->
   <link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS CDN for easy styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'dark-background': '#1a1a2e',
+            'dark-card': '#16213e',
+            'accent-blue': '#0f3460',
+            'highlight-pink': '#e94560',
+            'text-light': '#e0e0e0',
+            'text-gray': '#a0aec0',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <header>
-    <h1>Hello, I'm [Your Name]</h1>
-    <p>Welcome to my portfolio!</p>
+<body class="bg-dark-background text-text-light font-inter leading-relaxed">
+
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-50 bg-dark-background bg-opacity-90 backdrop-blur-sm p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold text-highlight-pink">
+        <a href="#">[CALEB KIPKAZI]</a>
+      </div>
+      <ul class="hidden md:flex space-x-6 text-sm font-semibold">
+        <li><a href="#about" class="hover:text-highlight-pink transition duration-300">About</a></li>
+        <li><a href="#skills" class="hover:text-highlight-pink transition duration-300">Skills</a></li>
+        <li><a href="#projects" class="hover:text-highlight-pink transition duration-300">Projects</a></li>
+        <li><a href="#experience" class="hover:text-highlight-pink transition duration-300">Experience</a></li>
+        <li><a href="#contact" class="hover:text-highlight-pink transition duration-300">Contact</a></li>
+      </ul>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-text-light hover:text-highlight-pink focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-dark-card shadow-lg p-4 transition-all duration-300">
+    <ul class="flex flex-col space-y-4 text-center text-sm">
+      <li><a href="#about" class="block py-2 hover:text-highlight-pink transition duration-300">About</a></li>
+      <li><a href="#skills" class="block py-2 hover:text-highlight-pink transition duration-300">Skills</a></li>
+      <li><a href="#projects" class="block py-2 hover:text-highlight-pink transition duration-300">Projects</a></li>
+      <li><a href="#experience" class="block py-2 hover:text-highlight-pink transition duration-300">Experience</a></li>
+      <li><a href="#contact" class="block py-2 hover:text-highlight-pink transition duration-300">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="bg-accent-blue py-20 md:py-32 text-center text-text-light">
+    <div class="container mx-auto px-4">
+      <!-- Profile Image -->
+      <div class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 overflow-hidden border-4 border-highlight-pink shadow-xl">
+        <img src="profile.jpeg" alt="Your Profile Picture" class="object-cover w-full h-full">
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Hello, I'm <span class="text-highlight-pink">Caleb Kipkazi</span></h1>
+      <p class="text-lg md:text-xl text-text-gray max-w-2xl mx-auto">A full-stack developer with a passion for the MERN stack, eager to build impactful solutions and create meaningful digital experiences.</p>
+      <div class="mt-8 flex justify-center space-x-4">
+        <!-- Download CV Button -->
+        <a href="cv1.pdf" download class="bg-highlight-pink text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-opacity-90 shadow-lg">
+          📄 Download My CV
+        </a>
+        <!-- GitHub Profile Button -->
+        <a href="https://github.com/Caleb-kipkazi" target="_blank" class="bg-transparent border border-highlight-pink text-highlight-pink font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:bg-highlight-pink hover:text-white shadow-lg">
+          My GitHub
+        </a>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Write a short bio here.</p>
-  </section>
+  <main class="container mx-auto px-4 py-16">
+    <!-- About Section -->
+    <section id="about" class="bg-dark-card rounded-xl p-8 md:p-12 shadow-2xl mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-highlight-pink mb-4">About Me</h2>
+      <p class="text-text-gray text-lg">
+        I’m a full-stack developer specializing in the MERN stack (MongoDB, Express, React, Node.js). I love solving problems and creating digital experiences that matter. I'm a fast learner and thrive in collaborative environments where I can build and grow.
+      </p>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Project 1</li>
-      <li>Project 2</li>
-    </ul>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="bg-dark-card rounded-xl p-8 md:p-12 shadow-2xl mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-highlight-pink mb-6">Skills & Tools</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <!-- Programming Languages -->
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.svg" alt="JavaScript" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">JavaScript</p>
+        </div>
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.svg" alt="Python" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">Python</p>
+        </div>
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.svg" alt="HTML5" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">HTML5 & CSS3</p>
+        </div>
+        <!-- Frameworks & Databases -->
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/react/react.svg" alt="React Native" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">React Native</p>
+        </div>
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/nodejs/nodejs.svg" alt="Node.js" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">Node.js</p>
+        </div>
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/mongodb/mongodb.svg" alt="MongoDB" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">MongoDB</p>
+        </div>
+        <!-- MERN Stack -->
+        <div class="bg-accent-blue p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <img src="https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg" alt="MERN Stack" class="w-12 h-12 mx-auto mb-2">
+          <p class="font-semibold">MERN Stack</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Your Name</p>
+    <!-- Projects Section -->
+    <section id="projects" class="bg-dark-card rounded-xl p-8 md:p-12 shadow-2xl mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-highlight-pink mb-6">My Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-accent-blue p-6 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-text-light">Scrap Connect</h3>
+          <p class="text-text-gray mt-2 mb-4">A mobile app that connects homeowners with scrap collectors, simplifying waste management.</p>
+          <a href="https://github.com/Caleb-kipkazi/Scrap.Connect" target="_blank" class="text-highlight-pink font-semibold hover:underline">View on GitHub →</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-accent-blue p-6 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-text-light">Portfolio Website</h3>
+          <p class="text-text-gray mt-2 mb-4">This personal website, built with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+          <a href="https://github.com/Caleb-kipkazi/my-portfolio" target="_blank" class="text-highlight-pink font-semibold hover:underline">View on GitHub →</a>
+        </div>
+        <!-- Add more projects here -->
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="bg-dark-card rounded-xl p-8 md:p-12 shadow-2xl mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-highlight-pink mb-6">Experience & Education</h2>
+      <div class="space-y-8">
+        <!-- Experience 1 (placeholder) -->
+        <div>
+          <h3 class="text-2xl font-bold text-text-light">Software Engineering Intern</h3>
+          <p class="text-lg text-text-gray">Tech Company Inc. | May 2025 - August 2025</p>
+          <ul class="list-disc list-inside text-text-gray mt-2 space-y-1">
+            <li>Developed and maintained features for a new web application.</li>
+            <li>Collaborated with a team of developers using Agile methodologies.</li>
+            <li>Contributed to code reviews and improved application performance.</li>
+          </ul>
+        </div>
+        <!-- Education -->
+        <div>
+          <h3 class="text-2xl font-bold text-text-light">Bachelor of Science in Software Engineering</h3>
+          <p class="text-lg text-text-gray">University of Eastern Africa, Baraton | Graduated 2025</p>
+          <p class="text-text-gray mt-2">Relevant coursework included Data Structures, Algorithms, Web Development, and Database Systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark-card rounded-xl p-8 md:p-12 shadow-2xl mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-highlight-pink mb-6 text-center">Get in Touch</h2>
+      <form action="https://formsubmit.co/calebkipkazi@gmail.com" method="POST" class="max-w-xl mx-auto">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full bg-accent-blue text-text-light border-2 border-transparent focus:border-highlight-pink rounded-lg py-3 px-4 mb-4 outline-none transition-colors duration-300">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full bg-accent-blue text-text-light border-2 border-transparent focus:border-highlight-pink rounded-lg py-3 px-4 mb-4 outline-none transition-colors duration-300">
+        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-accent-blue text-text-light border-2 border-transparent focus:border-highlight-pink rounded-lg py-3 px-4 mb-4 outline-none transition-colors duration-300"></textarea>
+        <button type="submit" class="w-full bg-highlight-pink text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-opacity-90 shadow-lg">
+          Send Message
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-accent-blue py-8 text-center text-text-gray">
+    <div class="container mx-auto px-4">
+      <p class="text-sm">© 2025 [Caleb Kipkazi]. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // JavaScript for mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
 </html>
